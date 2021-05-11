@@ -1,0 +1,15 @@
+create database negoziorossi;
+
+use negoziorossi;
+
+create table abbigliamento
+(
+	id int primary key auto_increment,
+    nome varchar(100),
+    codice_articolo int,
+    categoria varchar(50),
+    prezzo int,
+    colore varchar(50),
+    taglia varchar(10),
+    npezzi int
+);
