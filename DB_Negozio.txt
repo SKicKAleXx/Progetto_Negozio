@@ -22,7 +22,8 @@ id int primary key auto_increment,
 colore varchar(50),
 taglia varchar(50),
 idprodotto int,
-foreign key (idprodotto) references prodotti(id)
+foreign key (idprodotto) references prodotti(id),
+npezzi int
 );
 
 create table credenziali(
