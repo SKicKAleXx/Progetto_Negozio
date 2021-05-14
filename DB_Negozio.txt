@@ -22,16 +22,40 @@ id int primary key auto_increment,
 colore varchar(50),
 taglia varchar(50),
 idprodotto int,
-foreign key (idprodotto) references prodotti(id),
-npezzi int
+foreign key (idprodotto) references prodotti(id)
 );
 
 create table credenziali(
 id int primary key auto_increment,
 mail varchar(50),
 psw varchar(50),
-idutente int,
+idutente int unique,
 foreign key (idutente) references utenti(id)
+);
+
+create table recensione(
+id int primary key auto_increment,
+idprodotto int,
+foreign key (idprodotto) references prodotti(id),
+commento varchar(100),
+valutazione int
+);
+
+create table prodotti_in_ordine(
+id int primary key auto_increment,
+idprodotto int,
+foreign key (idprodotto) references prodotti(id),
+npezzi int
+);
+
+create table ordini(
+id int primary key auto_increment,
+idprodotto int,
+foreign key (idprodotto) references prodotti_in_ordine(id),
+idutente int,
+foreign key (idutente) references utenti(id),
+prezzo double
+);
 );
 
 create table recensone(
