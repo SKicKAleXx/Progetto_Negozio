@@ -52,7 +52,7 @@ npezzi int
 
 create table ordini(
 id int primary key auto_increment,
-idprodotto int,
+idcarrello int,
 foreign key (idprodotto) references prodotti_in_ordine(id),
 idutente int,
 foreign key (idutente) references utenti(id),
