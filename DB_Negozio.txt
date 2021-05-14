@@ -37,7 +37,9 @@ create table recensione(
 id int primary key auto_increment,
 idprodotto int,
 foreign key (idprodotto) references prodotti(id),
-commento varchar(100),
+idutente int,
+foreign key (idutente) references utenti(id),
+commento varchar(200),
 valutazione int
 );
 
@@ -52,24 +54,6 @@ create table ordini(
 id int primary key auto_increment,
 idprodotto int,
 foreign key (idprodotto) references prodotti_in_ordine(id),
-idutente int,
-foreign key (idutente) references utenti(id),
-prezzo double
-);
-);
-
-create table recensone(
-id int primary key auto_increment,
-idprodotto int,
-foreign key (idprodotto) references prodotti(id),
-commento varchar(100),
-valutazione int
-);
-
-create table ordini(
-id int primary key auto_increment,
-idprodotto int,
-foreign key (idprodotto) references prodotti(id),
 idutente int,
 foreign key (idutente) references utenti(id),
 prezzo double
