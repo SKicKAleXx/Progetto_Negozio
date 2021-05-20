@@ -1,3 +1,5 @@
+
+
 const ProductScreen = {
     after_render: () => {
         const request = parseRequestUrl();

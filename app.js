@@ -9,7 +9,7 @@ const routes = {
     '/signin': SigninScreen,
     
 };
-const router = () => {
+const router = async () => {
     const request = parseRequestUrl();
     const parseUrl = 
     (request.resource ? `/${request.resource}`: '/') +
@@ -21,3 +21,18 @@ const router = () => {
 };
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
+
+var aperto = false;
+
+function toggle(){
+    if(!aperto){
+        document.getElementById('menu').style.marginRight="0px";
+        aperto = true;
+
+    }else{
+        document.getElementById('menu').style.marginRight="-240px";
+        aperto = false;
+
+
+    };
+};
