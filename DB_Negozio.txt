@@ -7,6 +7,8 @@ id int primary key auto_increment,
 nome varchar(50),
 cognome varchar(50),
 cellulare varchar(50),
+mail varchar(50),
+psw varchar(50),
 indirizzo varchar(50)
 );
 
@@ -24,13 +26,6 @@ taglia varchar(50),
 idprodotto int,
 foreign key (idprodotto) references prodotti(id),
 npezzi int
-);
-
-create table credenziali(
-id int primary key,
-mail varchar(50),
-psw varchar(50),
-foreign key (id) references utenti(id)
 );
 
 create table recensione(
